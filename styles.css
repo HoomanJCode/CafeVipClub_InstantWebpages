@@ -1,0 +1,664 @@
+/* Reset و تنظیمات پایه */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3a0ca3;
+    --success-color: #4cc9f0;
+    --warning-color: #f72585;
+    --danger-color: #7209b7;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --gray-color: #6c757d;
+    --border-radius: 12px;
+    --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    line-height: 1.8;
+    color: var(--dark-color);
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    direction: rtl;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* هدر */
+.header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.logo i {
+    font-size: 2.5rem;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.subtitle p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* بخش‌ها */
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.section-header i {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+}
+
+.section-header h2 {
+    font-size: 1.6rem;
+    color: var(--dark-color);
+}
+
+/* کارت خلاصه */
+.summary-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.summary-card {
+    background: white;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    border-top: 5px solid var(--primary-color);
+}
+
+.summary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.summary-card .icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--success-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 1.8rem;
+}
+
+.summary-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.summary-card ul, .summary-card ol {
+    padding-right: 20px;
+    margin-top: 15px;
+}
+
+.summary-card li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.summary-card li i {
+    color: var(--primary-color);
+    margin-top: 5px;
+}
+
+/* مفاهیم پایه */
+.concepts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.concept-card {
+    background: white;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.score-card {
+    border-top: 5px solid #4cc9f0;
+}
+
+.token-card {
+    border-top: 5px solid #f72585;
+}
+
+.concept-card:hover {
+    transform: translateY(-5px);
+}
+
+.concept-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 2rem;
+}
+
+.concept-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.concept-types {
+    margin-top: 20px;
+}
+
+.type {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: var(--transition);
+}
+
+.type:hover {
+    background: #e9ecef;
+}
+
+.type-icon {
+    font-size: 1.8rem;
+}
+
+.type h4 {
+    color: var(--dark-color);
+    margin-bottom: 5px;
+}
+
+/* مراحل فرآیند */
+.process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.step-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 25px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    cursor: pointer;
+    border-right: 5px solid var(--primary-color);
+}
+
+.step-card:hover {
+    transform: translateX(-5px);
+}
+
+.step-number {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.step-content h3 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.step-content ol {
+    padding-right: 20px;
+}
+
+.step-content li {
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+
+.highlight {
+    background: #fff3cd;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border-right: 4px solid #ffc107;
+    margin: 10px 0;
+}
+
+.notification {
+    background: #d1ecf1;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border-right: 4px solid var(--success-color);
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* محاسبه امتیاز */
+.calculation-box {
+    background: white;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 40px;
+    border-top: 5px solid var(--success-color);
+}
+
+.calculation-box h3 {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.calculation-formula {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.formula-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.formula-item:hover {
+    background: #e9ecef;
+    transform: translateX(-5px);
+}
+
+.formula-value, .formula-result {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.formula-value {
+    color: var(--primary-color);
+}
+
+.formula-result {
+    color: var(--success-color);
+}
+
+.formula-arrow i {
+    color: var(--gray-color);
+}
+
+/* هشدار توکن */
+.warning-box {
+    background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-right: 5px solid #ffc107;
+}
+
+.warning-icon {
+    width: 60px;
+    height: 60px;
+    background: #ffc107;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+.warning-content h3 {
+    color: #856404;
+    margin-bottom: 10px;
+}
+
+.warning-content p {
+    color: #856404;
+    font-weight: 500;
+}
+
+/* حباب گفتگو */
+.response-box {
+    margin-top: 15px;
+}
+
+.speech-bubble {
+    background: #e3f2fd;
+    padding: 15px;
+    border-radius: 15px;
+    position: relative;
+    margin-top: 10px;
+    border-right: 4px solid var(--primary-color);
+}
+
+.speech-bubble:after {
+    content: '';
+    position: absolute;
+    right: 30px;
+    top: -10px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #e3f2fd;
+}
+
+/* نکات کلیدی */
+.points-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.point-card {
+    background: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.point-card:hover {
+    transform: translateY(-5px);
+}
+
+.point-card.positive {
+    border-top: 5px solid #28a745;
+}
+
+.point-card.negative {
+    border-top: 5px solid #dc3545;
+}
+
+.point-card.warning {
+    border-top: 5px solid #ffc107;
+}
+
+.point-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.point-card.positive .point-icon {
+    background: #d4edda;
+    color: #28a745;
+}
+
+.point-card.negative .point-icon {
+    background: #f8d7da;
+    color: #dc3545;
+}
+
+.point-card.warning .point-icon {
+    background: #fff3cd;
+    color: #ffc107;
+}
+
+.point-card p {
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+/* فوتتر */
+.footer {
+    background: linear-gradient(135deg, var(--dark-color), #343a40);
+    color: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.footer-logo i {
+    color: var(--success-color);
+    font-size: 1.5rem;
+}
+
+.footer-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.print-btn, .help-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Vazirmatn', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+}
+
+.print-btn {
+    background: var(--primary-color);
+    color: white;
+}
+
+.help-btn {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.print-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+.help-btn:hover {
+    background: white;
+    color: var(--dark-color);
+    transform: translateY(-3px);
+}
+
+/* ریسپانسیو */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .header {
+        padding: 20px;
+    }
+    
+    .logo {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .logo h1 {
+        font-size: 1.4rem;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .step-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .step-number {
+        align-self: center;
+    }
+    
+    .step-content h3 {
+        justify-content: center;
+    }
+    
+    .warning-box {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .print-btn, .help-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .summary-content,
+    .concepts-grid,
+    .points-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .step-content ol {
+        padding-right: 10px;
+    }
+}
+
+/* انیمیشن‌ها */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.summary-card,
+.concept-card,
+.step-card,
+.point-card {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* حالت پرینت */
+@media print {
+    body {
+        background: white;
+        color: black;
+        font-size: 12pt;
+    }
+    
+    .header,
+    .summary-card,
+    .concept-card,
+    .step-card,
+    .calculation-box,
+    .warning-box,
+    .point-card,
+    .footer {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .footer-actions {
+        display: none;
+    }
+}
