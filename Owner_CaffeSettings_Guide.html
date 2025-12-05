@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Open Graph Meta Tags برای تلگرام -->
+    <meta property="og:title" content="راهنمای تنظیمات کافه - سیستم باشگاه وفاداری">
+    <meta property="og:description" content="راهنمای جامع پیکربندی و مدیریت سیستم وفاداری دیجیتال مشتریان">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hoomanjcode.github.io/CafeVipClub_InstantWebpages/Owner_CaffeSettings_Guide.html">
+    <meta property="og:image" content="https://placehold.co/1200x630/8B4513/ffffff.png?text=Cafe+Settings+Guide+Loyalty">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="fa_IR">
+    <title>راهنمای تنظیمات کافه - سیستم باشگاه وفاداری</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* استایل‌های اضافی */
+        .settings-menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .menu-important {
+            border: 2px solid var(--coffee-red) !important;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(201, 76, 76, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(201, 76, 76, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(201, 76, 76, 0); }
+        }
+        
+        .menu-item-detail {
+            background: white;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            border-right: 4px solid var(--coffee-medium);
+            position: relative;
+            background: linear-gradient(to left, white, var(--coffee-milk));
+        }
+        
+        .menu-item-detail h4 {
+            color: var(--coffee-dark);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .timing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(74, 44, 42, 0.1);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            background: white;
+        }
+        
+        .timing-table th {
+            background: linear-gradient(135deg, var(--coffee-medium), var(--coffee-light));
+            color: white;
+            padding: 12px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .timing-table td {
+            padding: 10px 12px;
+            text-align: center;
+            border-bottom: 1px solid var(--coffee-cream);
+        }
+        
+        .timing-table tr:nth-child(even) {
+            background: rgba(249, 245, 240, 0.5);
+        }
+        
+        .timing-table tr:hover {
+            background: rgba(245, 232, 208, 0.3);
+        }
+        
+        .example-box {
+            background: linear-gradient(135deg, #e8f4fd, #d1e7ff);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin: 20px 0;
+            border-right: 6px solid var(--coffee-medium);
+        }
+        
+        .example-box h3 {
+            color: #1a5fb4;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .setup-steps {
+            counter-reset: step-counter;
+        }
+        
+        .setup-step {
+            background: white;
+            padding: 15px 15px 15px 50px;
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            position: relative;
+            border-right: 4px solid var(--coffee-green);
+        }
+        
+        .setup-step::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, var(--coffee-green), #7bb5a3);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(93, 140, 126, 0.3);
+            border: 3px solid white;
+        }
+        
+        .faq-item {
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            border-right: 4px solid var(--coffee-light);
+            position: relative;
+            background: linear-gradient(to left, white, var(--coffee-milk));
+        }
+        
+        .faq-item h4 {
+            color: var(--coffee-dark);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .faq-item::before {
+            content: '❓';
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            font-size: 1.5rem;
+            opacity: 0.3;
+        }
+        
+        .tip-card {
+            background: linear-gradient(135deg, #fff9e6, #fff3cc);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            border-right: 4px solid var(--coffee-gold);
+        }
+        
+        .tip-card h4 {
+            color: #b38600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .security-box {
+            background: linear-gradient(135deg, #ffe6e6, #ffcccc);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin: 20px 0;
+            border-right: 6px solid var(--coffee-red);
+        }
+        
+        .security-box h3 {
+            color: var(--coffee-red);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .feature-highlight {
+            background: linear-gradient(135deg, #4a2c2a, #8b5a2b);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: bold;
+            margin: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            direction: ltr;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- هدر -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-sliders-h"></i>
+                <h1>🎯 راهنمای تنظیمات کافه - سیستم باشگاه وفاداری</h1>
+            </div>
+            <div class="subtitle">
+                <p>پیکربندی کامل سیستم مدیریت وفاداری مشتریان</p>
+            </div>
+        </header>
+
+        <!-- مقدمه -->
+        <section class="summary-section">
+            <div class="section-header">
+                <i class="fas fa-book-reader"></i>
+                <h2>📖 مقدمه</h2>
+            </div>
+            <div class="summary-card">
+                <div class="icon"><i class="fas fa-cogs"></i></div>
+                <p>این راهنما به شما کمک می‌کند تا سیستم باشگاه مشتریان کافه خود را به راحتی تنظیم و مدیریت کنید.</p>
+                <p>تمامی امکانات به صورت ساده و کاربرپسند طراحی شده‌اند.</p>
+                <div class="notification" style="margin-top: 15px; background: rgba(139, 90, 43, 0.15);">
+                    <i class="fas fa-star"></i>
+                    <span>هیچ دانش فنی خاصی نیاز نیست! همه تنظیمات با چند کلیک انجام می‌شوند.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- منوی اصلی تنظیمات -->
+        <section class="process-section">
+            <div class="section-header">
+                <i class="fas fa-home"></i>
+                <h2>🏠 منوی اصلی تنظیمات کافه</h2>
+            </div>
+            
+            <div class="settings-menu-grid">
+                <div class="menu-item-detail">
+                    <h4><span class="feature-highlight">❓ راهنما</span></h4>
+                    <p>همین صفحه را نمایش می‌دهد.</p>
+                </div>
+                
+                <div class="menu-item-detail">
+                    <h4><span class="feature-highlight">👑 انتقال کنترل مالک</span></h4>
+                    <p>اگر می‌خواهید فرد دیگری (مثل مدیر کافه) نیز دسترسی مالک داشته باشد.</p>
+                </div>
+                
+                <div class="menu-item-detail">
+                    <h4><span class="feature-highlight">🚫 لغو دسترسی مالک</span></h4>
+                    <p>برای بازپس‌گیری دسترسی مالک از مدیران دیگر.</p>
+                </div>
+                
+                <div class="menu-item-detail menu-important">
+                    <h4><span class="feature-highlight">⚙️ خدمات (مهم)</span></h4>
+                    <p><strong>قلب سیستم تنظیمات!</strong> از اینجا همه چیز را مدیریت می‌کنید:</p>
+                    <ul style="margin-top: 10px; padding-right: 15px;">
+                        <li>پاداش‌های خودکار</li>
+                        <li>اشتراک‌ها</li>
+                        <li>توکن‌ها</li>
+                        <li>امتیازها</li>
+                    </ul>
+                </div>
+                
+                <div class="menu-item-detail">
+                    <h4><span class="feature-highlight">👥 مدیران</span></h4>
+                    <p>افزودن یا حذف صندوقداران و مدیران.</p>
+                </div>
+                
+                <div class="menu-item-detail">
+                    <h4><span class="feature-highlight">🎯 امتیاز دعوت</span></h4>
+                    <p>تنظیم تعداد امتیازی که مشتریان به ازای دعوت هر دوست دریافت می‌کنند.</p>
+                </div>
+                
+                <div class="menu-item-detail">
+                    <h4><span class="feature-highlight">🎁 هدیه تولد</span></h4>
+                    <p>تنظیم یک توکن خاص به عنوان هدیه تولد برای مشتریان.</p>
+                </div>
+                
+                <div class="menu-item-detail">
+                    <h4><span class="feature-highlight">👥 کاربران مشترک</span></h4>
+                    <p>مشاهده لیست مشتریانی که اشتراک فعال دارند.</p>
+                </div>
+                
+                <div class="menu-item-detail">
+                    <h4><span class="feature-highlight">📨 ارسال پیام به مشتریان</span></h4>
+                    <p>ارسال پیام گروهی به همه یا گروهی از مشتریان.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- بخش خدمات -->
+        <section class="concepts-section">
+            <div class="section-header">
+                <i class="fas fa-cogs"></i>
+                <h2>⚙️ بخش خدمات (مهم‌ترین قسمت)</h2>
+            </div>
+            
+            <div class="concepts-grid">
+                <div class="concept-card score-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>1. 🔄 توزیع خودکار توکن به مشترکین</h3>
+                    <p><strong>چه کاری می‌کند؟</strong></p>
+                    <p>به مشتریانی که اشتراک خریده‌اند، به طور منظم توکن می‌دهد.</p>
+                    <div class="example-box" style="margin: 10px 0; padding: 10px;">
+                        <strong>مثال:</strong>
+                        <p>"هر مشترک طلایی، هر ۷۲۰ ساعت (۱ ماه) ۲ توکن قهوه رایگان دریافت کند."</p>
+                    </div>
+                    <p><strong>چگونه تنظیم می‌کنید؟</strong></p>
+                    <ol>
+                        <li>توکن مورد نظر را انتخاب می‌کنید</li>
+                        <li>اشتراک هدف را مشخص می‌کنید</li>
+                        <li>تعداد توکن و دوره توزیع (به ساعت) را تنظیم می‌کنید</li>
+                    </ol>
+                </div>
+                
+                <div class="concept-card token-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>2. 🏆 هدیه توکن در ازای امتیاز</h3>
+                    <p><strong>چه کاری می‌کند؟</strong></p>
+                    <p>وقتی مشتری به امتیاز مشخصی می‌رسد، به طور خودکار به او توکن پاداش می‌دهد.</p>
+                    <div class="example-box" style="margin: 10px 0; padding: 10px;">
+                        <strong>مثال:</strong>
+                        <p>"هر مشتری که به ۵۰۰ امتیاز خرید برسد، ۱ توکن کاپوچینو رایگان دریافت کند."</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="concepts-grid" style="margin-top: 20px;">
+                <div class="concept-card score-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>3. 🏆 هدیه اشتراک در ازای امتیاز</h3>
+                    <p><strong>چه کاری می‌کند؟</strong></p>
+                    <p>وقتی مشتری امتیازش به حد مشخصی رسید، به طور خودکار اشتراک ویژه دریافت می‌کند.</p>
+                    <div class="example-box" style="margin: 10px 0; padding: 10px;">
+                        <strong>مثال:</strong>
+                        <p>"مشتریان با ۱۰۰۰ امتیاز خرید، اشتراک نقره‌ای رایگان دریافت کنند."</p>
+                    </div>
+                </div>
+                
+                <div class="concept-card token-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>4. 🔄 تبدیل امتیاز به امتیاز دیگر</h3>
+                    <p><strong>چه کاری می‌کند؟</strong></p>
+                    <p>در ازای یک نوع امتیاز، امتیاز دیگری به مشتری داده می‌شود.</p>
+                    <div class="example-box" style="margin: 10px 0; padding: 10px;">
+                        <strong>مثال:</strong>
+                        <p>"هر ۳ امتیاز دعوت، ۱۰۰ امتیاز خرید دریافت کند."</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="concepts-grid" style="margin-top: 20px;">
+                <div class="concept-card score-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-dice"></i>
+                    </div>
+                    <h3>5. 🎰 قرعه‌کشی توکن</h3>
+                    <p><strong>چه کاری می‌کند؟</strong></p>
+                    <p>بین مشتریانی که توکن خاصی دارند، قرعه‌کشی برگزار می‌کند و به برندگان توکن جایزه می‌دهد.</p>
+                    <div class="example-box" style="margin: 10px 0; padding: 10px;">
+                        <strong>مثال:</strong>
+                        <p>"هر ۷۲۰ ساعت (۱ ماه) بین دارندگان توکن ویژه، قرعه‌کشی برگزار شود و ۳ برنده هر کدام ۵ توکن اسپرسو دریافت کنند."</p>
+                    </div>
+                </div>
+                
+                <div class="concept-card token-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-toolbox"></i>
+                    </div>
+                    <h3>6-9. مدیریت اشتراک‌ها، توکن‌ها، امتیازها و تست</h3>
+                    <ul>
+                        <li><strong>🎫 مدیریت اشتراک‌ها:</strong> ایجاد و ویرایش انواع اشتراک‌ها</li>
+                        <li><strong>🪙 مدیریت توکن‌ها:</strong> ایجاد و ویرایش انواع توکن‌ها</li>
+                        <li><strong>🏆 مدیریت امتیازها:</strong> تعریف انواع امتیازها و تنظیمات آنها</li>
+                        <li><strong>🎮 تست تبدیل امتیاز به سطح:</strong> امتحان کردن تبدیل امتیاز</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- سیستم زمان‌بندی -->
+        <section class="process-section">
+            <div class="section-header">
+                <i class="fas fa-clock"></i>
+                <h2>⏰ سیستم زمان‌بندی (بر اساس ساعت)</h2>
+            </div>
+            
+            <div class="step-card">
+                <div class="step-content">
+                    <p><strong>تمام دوره‌های توزیع بر اساس ساعت تنظیم می‌شوند:</strong></p>
+                    
+                    <table class="timing-table">
+                        <thead>
+                            <tr>
+                                <th>دوره متداول</th>
+                                <th>تعداد ساعت</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>روزانه</td>
+                                <td><strong>24 ساعت</strong></td>
+                            </tr>
+                            <tr>
+                                <td>هفتگی</td>
+                                <td><strong>168 ساعت</strong></td>
+                            </tr>
+                            <tr>
+                                <td>ماهانه</td>
+                                <td><strong>720 ساعت</strong></td>
+                            </tr>
+                            <tr>
+                                <td>سه‌ماهه</td>
+                                <td><strong>2160 ساعت</strong></td>
+                            </tr>
+                            <tr>
+                                <td>سالانه</td>
+                                <td><strong>8760 ساعت</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="notification" style="margin-top: 15px;">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span><strong>حداکثر زمان: 1 سال (8760 ساعت)</strong></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- مثال‌های کاربردی -->
+        <section class="concepts-section">
+            <div class="section-header">
+                <i class="fas fa-lightbulb"></i>
+                <h2>🎯 مثال‌های کاربردی برای کافه‌داران</h2>
+            </div>
+            
+            <div class="example-box">
+                <h3><i class="fas fa-coffee"></i> مثال ۱: برنامه وفاداری ساده</h3>
+                <div class="code-block">
+1. 🎫 ایجاد اشتراک "عضویت طلایی"
+2. 🔄 تنظیم: هر مشترک طلایی هر ۷۲۰ ساعت ۴ توکن قهوه رایگان بگیرد
+3. 🏆 تنظیم: هر ۱۰۰۰ امتیاز خرید = ۱ توکن کیک ویژه
+                </div>
+            </div>
+            
+            <div class="example-box">
+                <h3><i class="fas fa-gem"></i> مثال ۲: برنامه تشویقی ویژه</h3>
+                <div class="code-block">
+1. 🎰 ایجاد قرعه‌کشی: هر ۲۱۶۰ ساعت (۳ ماه) بین همه مشتریان
+2. 🔄 تنظیم: هر ۵ امتیاز دعوت = ۱۵۰ امتیاز خرید
+3. 🎁 تنظیم: در روز تولد هر مشتری، ۲ توکن هدیه ویژه
+                </div>
+            </div>
+            
+            <div class="example-box">
+                <h3><i class="fas fa-user-plus"></i> مثال ۳: برنامه جذب مشتری جدید</h3>
+                <div class="code-block">
+1. 🎯 تنظیم امتیاز دعوت: هر دعوت موفق = ۵۸ امتیاز خرید + ۱ امتیاز دعوت
+2. 🏆 تنظیم: رسیدن به ۱۰۰ امتیاز خرید = ۱ توکن خوش‌آمدگویی
+                </div>
+            </div>
+        </section>
+
+        <!-- مراحل راه‌اندازی سریع -->
+        <section class="process-section">
+            <div class="section-header">
+                <i class="fas fa-bolt"></i>
+                <h2>📋 مراحل راه‌اندازی سریع</h2>
+            </div>
+            
+            <div class="setup-steps">
+                <div class="setup-step">
+                    <h4>مرحله ۱: تنظیمات پایه</h4>
+                    <ol>
+                        <li><strong>توکن‌ها را ایجاد کنید</strong> (حداقل ۳-۴ نوع: قهوه، کیک، تخفیف)</li>
+                        <li><strong>اشتراک‌ها را تعریف کنید</strong> (طلا، نقره)</li>
+                        <li><strong>امتیازها را تنظیم کنید</strong> (خرید: هر ۱۰۰۰ تومان = ۱ امتیاز)</li>
+                    </ol>
+                </div>
+                
+                <div class="setup-step">
+                    <h4>مرحله ۲: پاداش‌های اولیه</h4>
+                    <ol>
+                        <li><strong>یک هدیه امتیازی</strong> تنظیم کنید (مثلاً هر ۵۰۰ امتیاز خرید = ۱ قهوه)</li>
+                        <li><strong>پاداش دعوت</strong> را فعال کنید</li>
+                        <li><strong>یک قرعه‌کشی ساده</strong> راه‌اندازی کنید (مثلاً هر ۷۲۰ ساعت)</li>
+                    </ol>
+                </div>
+                
+                <div class="setup-step">
+                    <h4>مرحله ۳: اشتراک‌ها و پاداش‌های ویژه</h4>
+                    <ol>
+                        <li><strong>توزیع توکن برای مشترکین</strong> را تنظیم کنید</li>
+                        <li><strong>هدیه تولد</strong> مشخص کنید</li>
+                        <li><strong>تبدیل امتیاز به امتیاز</strong> برای تشویق دعوت تنظیم کنید</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- نکات فنی مهم -->
+        <section class="key-points">
+            <div class="section-header">
+                <i class="fas fa-wrench"></i>
+                <h2>🔧 نکات فنی مهم</h2>
+            </div>
+            
+            <div class="points-grid">
+                <div class="point-card positive">
+                    <div class="point-icon">
+                        <i class="fas fa-redo"></i>
+                    </div>
+                    <div>
+                        <h4>🔄 تکرار (Repeat) چیست؟</h4>
+                        <p><strong>با تکرار:</strong> پاداش هر بار که شرط برقرار شود، داده می‌شود</p>
+                        <p><strong>بدون تکرار:</strong> پاداش فقط یک بار داده می‌شود</p>
+                    </div>
+                </div>
+                
+                <div class="point-card warning">
+                    <div class="point-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <h4>⏰ دوره توزیع (بر اساس ساعت)</h4>
+                        <p>حداقل: ۱ ساعت</p>
+                        <p>حداکثر: ۸۷۶۰ ساعت (۱ سال)</p>
+                        <p>پیشنهادی برای ماهانه: ۷۲۰ ساعت</p>
+                    </div>
+                </div>
+                
+                <div class="point-card positive">
+                    <div class="point-icon">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <div>
+                        <h4>🎁 هدیه تولد</h4>
+                        <p>یک یا چند توکن خاص انتخاب می‌شود</p>
+                        <p>در روز تولد مشتری به طور خودکار ارسال می‌شود</p>
+                        <p>هر مشتری سالی یک بار دریافت می‌کند</p>
+                    </div>
+                </div>
+                
+                <div class="point-card warning">
+                    <div class="point-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <div>
+                        <h4>🔄 تبدیل امتیازها</h4>
+                        <p>می‌توانید یک نوع امتیاز را به نوع دیگر تبدیل کنید</p>
+                        <p>مثال: "هر X امتیاز دعوت = Y امتیاز خرید"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- توصیه‌های مدیریتی -->
+        <section class="concepts-section">
+            <div class="section-header">
+                <i class="fas fa-chart-line"></i>
+                <h2>💡 توصیه‌های مدیریتی</h2>
+            </div>
+            
+            <div class="concepts-grid">
+                <div class="concept-card score-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <h3>برای شروع:</h3>
+                    <ul>
+                        <li><strong>ساده شروع کنید:</strong> اول ۲-۳ پاداش ساده تنظیم کنید</li>
+                        <li><strong>مشتریان را آگاه کنید:</strong> از طریق پیام گروهی اطلاع‌رسانی کنید</li>
+                        <li><strong>بازخورد بگیرید:</strong> بپرسید چه پاداش‌هایی جذاب‌ترند</li>
+                    </ul>
+                </div>
+                
+                <div class="concept-card token-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>برای رشد:</h3>
+                    <ul>
+                        <li><strong>قرعه‌کشی‌های دوره‌ای</strong> برگزار کنید</li>
+                        <li><strong>اشتراک‌های ویژه</strong> طراحی کنید</li>
+                        <li><strong>پاداش‌های محدود زمانی</strong> ایجاد کنید</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="concepts-grid" style="margin-top: 20px;">
+                <div class="concept-card score-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>برای وفاداری:</h3>
+                    <ul>
+                        <li><strong>پاداش تولد</strong> فعال کنید</li>
+                        <li><strong>اشتراک‌های پلکانی</strong> طراحی کنید</li>
+                        <li><strong>برنامه‌های ویژه برای مشتریان قدیمی</strong> ایجاد کنید</li>
+                    </ul>
+                </div>
+                
+                <div class="concept-card token-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>آموزش کارکنان:</h3>
+                    <ul>
+                        <li>صندوقداران را با سیستم آشنا کنید</li>
+                        <li>راهنمای استفاده به آنان بدهید</li>
+                        <li>جلسات آموزشی ماهانه برگزار کنید</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- سوالات متداول -->
+        <section class="process-section">
+            <div class="section-header">
+                <i class="fas fa-question-circle"></i>
+                <h2>❓ سوالات متداول</h2>
+            </div>
+            
+            <div class="faq-item">
+                <h4>سوال: تفاوت توکن و اشتراک چیست؟</h4>
+                <p><strong>پاسخ:</strong></p>
+                <ul>
+                    <li><strong>توکن:</strong> یک جایزه مصرفی (مثل یک قهوه رایگان)</li>
+                    <li><strong>اشتراک:</strong> یک عضویت دوره‌ای که در طول آن توکن دریافت می‌کنید</li>
+                </ul>
+            </div>
+            
+            <div class="faq-item">
+                <h4>سوال: بهترین تنظیمات برای شروع چیست؟</h4>
+                <p><strong>پاسخ:</strong></p>
+                <ol>
+                    <li>پاداش خرید: هر ۱۰۰۰ تومان = ۱ امتیاز</li>
+                    <li>پاداش دعوت: هر دعوت موفق = ۵۰ امتیاز خرید</li>
+                    <li>یک هدیه ساده: هر ۲۰۰ امتیاز خرید = ۱ قهوه رایگان</li>
+                </ol>
+            </div>
+            
+            <div class="faq-item">
+                <h4>سوال: چگونه بفهمم کدام پاداش‌ها پرطرفدارترند؟</h4>
+                <p><strong>پاسخ:</strong></p>
+                <ul>
+                    <li>از بخش "ارسال پیام" نظرسنجی کنید</li>
+                    <li>مصرف توکن‌ها را مقایسه کنید</li>
+                    <li>از صندوقداران بازخورد بگیرید</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- نکات امنیتی -->
+        <section class="process-section">
+            <div class="section-header">
+                <i class="fas fa-shield-alt"></i>
+                <h2>🔐 نکات امنیتی و دسترسی</h2>
+            </div>
+            
+            <div class="security-box">
+                <h3><i class="fas fa-sign-in-alt"></i> سیستم ورود:</h3>
+                <ul>
+                    <li>دسترسی مالک از طریق <strong>اکانت تلگرام</strong> شما صورت می‌گیرد</li>
+                    <li>نیازی به رمز عبور جداگانه نیست</li>
+                    <li>امنیت وابسته به امنیت اکانت تلگرام شماست</li>
+                </ul>
+                
+                <h3 style="margin-top: 20px;"><i class="fas fa-user-shield"></i> مدیریت دسترسی:</h3>
+                <ol>
+                    <li><strong>انتقال کنترل مالک</strong> را فقط به افراد کاملاً مطمئن بدهید</li>
+                    <li><strong>به طور دوره‌ای لیست مدیران</strong> را بررسی و به‌روزرسانی کنید</li>
+                    <li><strong>تغییرات مهم</strong> را در جایی خارج از سیستم نیز یادداشت کنید</li>
+                </ol>
+                
+                <h3 style="margin-top: 20px;"><i class="fas fa-life-ring"></i> در صورت بروز مشکل:</h3>
+                <ol>
+                    <li>ابتدا <strong>این راهنما</strong> را مطالعه کنید</li>
+                    <li>اگر مشکل حل نشد، با <strong>پشتیبانی فنی</strong> تماس بگیرید</li>
+                    <li><strong>قبل از تغییرات بزرگ</strong>، تنظیمات فعلی را بررسی کنید</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ارتقای سیستم -->
+        <section class="process-section">
+            <div class="section-header">
+                <i class="fas fa-chart-line"></i>
+                <h2>📈 ارتقای سیستم</h2>
+            </div>
+            
+            <div class="tip-card">
+                <h4><i class="fas fa-calendar-day"></i> پس از ۱ ماه:</h4>
+                <ul>
+                    <li>آمار مصرف توکن‌ها را بررسی کنید</li>
+                    <li>پاداش‌های کم‌استفاده را حذف یا تغییر دهید</li>
+                    <li>پاداش‌های پرطرفدار را تقویت کنید</li>
+                </ul>
+            </div>
+            
+            <div class="tip-card">
+                <h4><i class="fas fa-calendar-alt"></i> پس از ۳ ماه:</h4>
+                <ul>
+                    <li>طرح‌های اشتراک پیشرفته ایجاد کنید</li>
+                    <li>قرعه‌کشی‌های بزرگ‌تر برگزار کنید</li>
+                    <li>برنامه وفاداری چندسطحی طراحی کنید</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- شروع کار -->
+        <section class="summary-section">
+            <div class="section-header">
+                <i class="fas fa-flag-checkered"></i>
+                <h2>🏁 شروع کار</h2>
+            </div>
+            
+            <div class="summary-card" style="border-top: 6px solid var(--coffee-gold); text-align: center;">
+                <div class="icon" style="background: linear-gradient(135deg, var(--coffee-gold), #e6c158);">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3>پیشنهاد ما برای شروع آسان:</h3>
+                
+                <ol style="text-align: right; margin: 20px 0;">
+                    <li>⚙️ به <strong>بخش خدمات</strong> بروید</li>
+                    <li>🪙 <strong>۳ توکن ساده</strong> ایجاد کنید (قهوه، چای، کیک)</li>
+                    <li>🏆 <strong>یک قانون پاداش</strong> تنظیم کنید (هر ۵۰۰ امتیاز خرید = ۱ قهوه)</li>
+                    <li>🎁 <strong>یک هدیه تولد</strong> مشخص کنید (۱ توکن کیک رایگان)</li>
+                    <li>👥 <strong>به مشتریان اطلاع دهید</strong></li>
+                    <li>📊 <strong>بازخورد بگیرید و بهبود دهید</strong></li>
+                </ol>
+                
+                <div class="notification" style="background: rgba(212, 175, 55, 0.15); margin-top: 20px;">
+                    <i class="fas fa-quote-right"></i>
+                    <span><strong>یادتان باشد:</strong> بهترین سیستم وفاداری، سیستمی است که <em>هم برای شما سودآور باشد و هم مشتریان از آن لذت ببرند.</em> 🎉</span>
+                </div>
+            </div>
+            
+            <div class="notification" style="margin-top: 20px; text-align: center; font-size: 0.9rem;">
+                <i class="fas fa-info-circle"></i>
+                <span><em>این راهنما بر اساس آخرین نسخه سیستم تهیه شده است. ممکن است در آینده امکانات جدیدی اضافه شوند.</em></span>
+            </div>
+        </section>
+
+        <!-- فوتتر -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-sliders-h"></i>
+                    <span>راهنمای تنظیمات کافه - سیستم باشگاه وفاداری</span>
+                </div>
+                <p>نسخه ۱.۰ | راهنمای جامع پیکربندی سیستم وفاداری</p>
+                <div class="footer-actions">
+                    <button class="print-btn" onclick="window.print()">
+                        <i class="fas fa-print"></i> چاپ راهنما
+                    </button>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // اضافه کردن قابلیت کلیک بر روی کارت‌ها برای بزرگنمایی
+        document.querySelectorAll('.concept-card, .setup-step, .faq-item, .tip-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.classList.toggle('expanded');
+            });
+        });
+        
+        // هایلایت آیتم‌های مهم
+        const importantItems = document.querySelectorAll('.menu-important');
+        importantItems.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.02)';
+            });
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+        
+        // کپی کدهای مثال
+        document.querySelectorAll('.code-block').forEach(block => {
+            block.addEventListener('click', function() {
+                const text = this.textContent;
+                navigator.clipboard.writeText(text).then(() => {
+                    const original = this.textContent;
+                    this.textContent = '✅ کپی شد!';
+                    setTimeout(() => {
+                        this.textContent = original;
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
